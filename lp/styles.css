@@ -1046,12 +1046,6 @@ nav .button {
   line-height: 1.5;
   margin-top: 4px;
 }
-.testimonial-disclaimer {
-  font-size: 11px;
-  text-align: center;
-  margin-top: 27px;
-  color: #c0d0ca;
-}
 .testimonials .button {
   background: var(--mist);
   color: var(--ocean);
@@ -2100,10 +2094,6 @@ nav .button {
   .quote-card figcaption small {
     font-size: 11px;
   }
-  .testimonial-disclaimer {
-    line-height: 1.6;
-    margin-top: 24px;
-  }
   .differentials > .container > .section-heading {
     margin-bottom: 55px;
   }
@@ -2433,4 +2423,184 @@ nav .button {
   color: var(--muted);
   max-width: 270px;
   line-height: 1.6;
+}
+
+/* Reference-inspired entrances. All content stays visible without JavaScript. */
+.site-header {
+  transition:
+    box-shadow 240ms ease,
+    border-color 240ms ease;
+}
+.site-header.has-scrolled {
+  box-shadow: 0 7px 28px #17232c0d;
+  border-bottom-color: #cbd8d3;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .motion-enabled .motion-reveal {
+    opacity: 0;
+    transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 38px), 0);
+    transition:
+      opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) var(--motion-delay, 0ms),
+      transform 850ms cubic-bezier(0.16, 1, 0.3, 1) var(--motion-delay, 0ms),
+      translate 240ms ease,
+      box-shadow 240ms ease,
+      border-color 240ms ease;
+  }
+  .motion-enabled [data-reveal="down"] {
+    --reveal-y: -48px;
+  }
+  .motion-enabled [data-reveal="right"] {
+    --reveal-x: 32px;
+    --reveal-y: 0px;
+  }
+  .motion-enabled .motion-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  .motion-enabled .photo-frame.is-visible .hero-photo {
+    animation: photo-settle 1400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .motion-enabled .hero-chat.is-visible .hero-reply {
+    animation: interface-enter 600ms cubic-bezier(0.16, 1, 0.3, 1) 850ms both;
+  }
+  .motion-enabled .feature-panel:not([hidden]) {
+    animation: panel-enter 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .motion-enabled .feature-item[open] > p,
+  .motion-enabled .faq-item[open] > p {
+    animation: copy-enter 350ms ease both;
+  }
+  .motion-enabled .detail-visual.is-visible .knowledge-node,
+  .motion-enabled .detail-visual.is-visible .workflow-step,
+  .motion-enabled .detail-visual.is-visible .night-message .bubble,
+  .motion-enabled .detail-visual.is-visible .gift-sheet,
+  .motion-enabled .detail-visual.is-visible .context-card,
+  .motion-enabled .detail-visual.is-visible .control-card {
+    animation: interface-enter 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 240ms;
+  }
+  .motion-enabled .detail-visual.is-visible .node-b,
+  .motion-enabled .detail-visual.is-visible .workflow-step:nth-child(2) {
+    animation-delay: 360ms;
+  }
+  .motion-enabled .detail-visual.is-visible .node-c,
+  .motion-enabled .detail-visual.is-visible .workflow-step:nth-child(3),
+  .motion-enabled .detail-visual.is-visible .night-message .bubble.assistant {
+    animation-delay: 480ms;
+  }
+  .motion-enabled .detail-visual.is-visible .node-d,
+  .motion-enabled .detail-visual.is-visible .workflow-step:nth-child(4) {
+    animation-delay: 600ms;
+  }
+  .motion-enabled .feature-panel:not([hidden]) .bubble {
+    animation: interface-enter 450ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 100ms;
+  }
+  .motion-enabled .feature-panel:not([hidden]) .bubble ~ .bubble {
+    animation-delay: 220ms;
+  }
+  .motion-enabled .feature-panel:not([hidden]) .bubble ~ .bubble ~ .bubble {
+    animation-delay: 340ms;
+  }
+  .motion-enabled
+    .feature-panel:not([hidden])
+    .bubble
+    ~ .bubble
+    ~ .bubble
+    ~ .bubble {
+    animation-delay: 460ms;
+  }
+  .button {
+    transition:
+      background 200ms ease,
+      translate 240ms ease,
+      box-shadow 240ms ease;
+  }
+  .text-link .icon {
+    transition: transform 240ms ease;
+  }
+  .feature-item summary {
+    transition: color 200ms ease;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .button:hover {
+      translate: 0 -3px;
+      box-shadow: 0 8px 20px #17232c18;
+    }
+    .button:active {
+      translate: 0 0;
+      box-shadow: none;
+    }
+    .text-link:hover .icon {
+      transform: translateX(5px);
+    }
+    .quote-card.is-visible:hover {
+      translate: 0 -6px;
+      border-color: #648d82;
+      box-shadow: 0 16px 32px #06192126;
+    }
+    .floating-card.is-visible:hover {
+      translate: 0 -4px;
+      box-shadow: 0 18px 48px #06192138;
+    }
+    .feature-item summary:hover {
+      color: var(--teal);
+    }
+  }
+  @keyframes photo-settle {
+    from {
+      transform: scale(1.045);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  @keyframes interface-enter {
+    from {
+      opacity: 0;
+      translate: 0 18px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  @keyframes panel-enter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes copy-enter {
+    from {
+      opacity: 0;
+      translate: 0 -5px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+@media print {
+  .motion-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

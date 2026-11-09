@@ -14,13 +14,21 @@ Static public website served by GitHub Pages at `https://revian.com.br`.
 styles, mobile navigation, and feature illustrations. FAQs use native HTML
 accordions. The content remains readable if JavaScript is unavailable.
 
+Motion follows the reference page’s fade-and-slide entrances: staged hero content,
+scroll-triggered section headings and cards, sequential interface illustrations,
+feature-panel transitions, and hover feedback. Entrances run once. System reduced
+motion preferences disable these effects, including when changed during the visit.
+No animation library, continuous scroll handler, or autoplay carousel is required.
+
 All demonstration buttons open Pedro's WhatsApp at `+55 11 99222-3817` with:
 
 > Olá, gostaria saber mais sobre a Revian para minha clínica
 
 LinkedIn is the only social-profile link: `https://www.linkedin.com/company/revian-ai/`.
 The page has no videos, embedded players, tracking scripts, or lead collection.
-The sample testimonials, people, and clinics are explicitly labeled fictional.
+The testimonial text, names, and clinics are placeholders supplied for this design;
+they are not evidence of real customer endorsements. Per the requested presentation,
+the page does not show the former placeholder labels.
 Lead follow-up, AI charting, and voice AI are marked **Em breve**, following the
 reference's feature availability labels. Review these labels as the offering evolves.
 
